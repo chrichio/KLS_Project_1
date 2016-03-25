@@ -6,7 +6,7 @@
 
 int main(int argc, char *argv[])
 {
-    int number=atoi(argv[2]);//o ari8mos twn sugkrousewn
+    int number=atoi(argv[2]);//o ari8mos twn sugkrousewn, atoi gia metatropi apo string se int
     FILE *fp;
     fp = fopen(argv[1], "w");
     if (!fp)
