@@ -20,6 +20,7 @@ int main(int argc, char* argv[])
     int countlegit=0; //Sygkrouseis mesa sta oria
     float tmpX,tmpY,tmpZ;//temp metavlites
     int maxnum=atoi(argv[1]);
+    //start timer
     while((countcol<maxnum))
     {
         if (feof (fp)) break;
@@ -28,6 +29,7 @@ int main(int argc, char* argv[])
         if (tmpX>=MinLimit && tmpX<=MaxLimit && tmpZ>=MinLimit && tmpZ<=MaxLimit && tmpY>=MinLimit && tmpY<=MaxLimit)
             countlegit++;
     }
+    //end timer
     fclose(fp);
     // printf xronos epe3ergasias kai ru8mos sugkrouseis/ana lepto
     return 0;
