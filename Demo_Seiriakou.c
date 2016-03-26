@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #define MaxLimit 30
 #define MinLimit 12
+
 int main(int argc, char* argv[])
 {
 /*
