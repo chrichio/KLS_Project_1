@@ -21,15 +21,18 @@ int main(int argc, char* argv[])
     int countcol=0; //Metrisi sygkrousewn
     int countlegit=0; //Sygkrouseis mesa sta oria
     float tmpX,tmpY,tmpZ;//temp metavlites
-    int maxnum=atoi(argv[1]);
+    int num=atoi(argv[1]);//atoi g n metatrepsw to string se int
+    int i;
+    int ar[num][3];
+    for(i=0;i<num;i++)//vazw se pinaka tis suntetagmenes
+    {
+        fscanf(fp,"%f %f %f\n",ar[i][0],ar[i][1],ar[i][2]);
+    }
     struct timespec start, end;
     clock_gettime(CLOCK_MONOTONIC, &start);//ksekinaei o timer
-    while((countcol<maxnum))
+    for(i=0;i<num;i++)
     {
-        if (feof (fp)) break;
-        countcol++;
-        fscanf(fp,"%f %f %f\n",tmpX,tmpY,tmpZ);
-        if (tmpX>=MinLimit && tmpX<=MaxLimit && tmpZ>=MinLimit && tmpZ<=MaxLimit && tmpY>=MinLimit && tmpY<=MaxLimit)
+        if (ar[i][0]>=MinLimit && ar[i][0]<=MaxLimit && ar[i][1]>=MinLimit && ar[i][1]<=MaxLimit && ar[i][2]>=MinLimit && ar[i][2]Y<=MaxLimit)
             countlegit++;
     }
     clock_gettime(CLOCK_MONOTONIC, &end);//stamataei o timer
@@ -43,7 +46,6 @@ int main(int argc, char* argv[])
     {
         timeElapsed_n=DAS_NANO_SECONDS_IN_SEC+timeElapsed_n;
         timeElapsed_s--;
-        
     }
     return 0;
 }
