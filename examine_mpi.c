@@ -31,12 +31,16 @@ int main(int argc, char* argv[])
         fscanf(fp,"%f %f %f\n",ar[i][0],ar[i][1],ar[i][2]);
     }
     struct timespec start, end;
+    MPI_INIT(&argc,&argv);//3ekinaei to MPI
     clock_gettime(CLOCK_MONOTONIC, &start);//ksekinaei o timer
+    /* SERIAL
     for(i=0;i<num;i++)
     {
         if (ar[i][0]>=MinLimit && ar[i][0]<=MaxLimit && ar[i][1]>=MinLimit && ar[i][1]<=MaxLimit && ar[i][2]>=MinLimit && ar[i][2]Y<=MaxLimit)
             countlegit++;
     }
+    */
+    
     clock_gettime(CLOCK_MONOTONIC, &end);//stamataei o timer
     fclose(fp);
     //Block kwdika gia upologismo xronou
