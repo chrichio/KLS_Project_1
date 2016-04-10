@@ -39,7 +39,7 @@ int main(int argc, char* argv[])
     omp_set_num_threads(num_threads);//Dialegw me posa threads 8a tre3ei to omp
     #pragma omp parallel for reduction(+:countlegit)
     {
-        #pragma op master clock_gettime(CLOCK_MONOTONIC, &start);//arxizei o timer
+        #pragma omp master clock_gettime(CLOCK_MONOTONIC, &start);//arxizei o timer
         for(i=0;i<num;i++)
         {
             if (ar[i][0]>=MinLimit && ar[i][0]<=MaxLimit && ar[i][1]>=MinLimit && ar[i][1]<=MaxLimit && ar[i][2]>=MinLimit && ar[i][2]Y<=MaxLimit)
